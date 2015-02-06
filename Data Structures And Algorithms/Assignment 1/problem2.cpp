@@ -29,13 +29,18 @@ void strcpy(char *src, char *dest){
 
 	// Function to copy one string to another.
 
-	for (int i=0; i< strlen(src); i++)
-		cout << src[i];
+	while(*src!='\0'){
+		*dest=*src;
+		src++;
+		dest++;
+	}
+	*dest=*src;
 }
 
 int main() {
 
-	char s[100],s2[100];
+	char s[100];
+	char s2[100];
 	int length;
 
 	cout << "Enter the string. \n";
