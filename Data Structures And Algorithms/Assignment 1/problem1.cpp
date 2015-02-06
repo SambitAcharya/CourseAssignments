@@ -9,18 +9,34 @@ Return the array using a pointer. The function would be:  int *zero_array(int *a
 #include <iostream>
 using namespace std;
 
+int *zero_array(int *array, int length){
+
+	// Function to set all the elements of the array to zero.
+
+	for (int i = 0; i<length; i++)
+		*(array+i) = 0;
+
+	return array;
+}
+
 int main() {
-	int n;
+	int length;
 
 	cout << "Enter the length of the array. \n";
-	cin >> n;
+	cin >> length;
 
-	int *a = new int[n];
+	int *array = new int[length];
 
 	cout << "Enter the elements of the array. \n";
-	for(int i=0;i<n;i++){
-		cin >>  a[i];
-		cout << a[i];
+	for(int i=0;i<length;i++)
+		cin >>  array[i];
+
+	array = zero_array(array,length);
+
+	cout << "Printing the elements after pointer manipulation.";
+
+	for(int i=0;i<length;i++){
+		cout << array[i];
 		cout << "\n";
 	}
 	return 0;
