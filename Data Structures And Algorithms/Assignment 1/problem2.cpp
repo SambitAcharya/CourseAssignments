@@ -64,9 +64,8 @@ int strend(char *s, char *t){
 
 	int i = 0,ans=1;
 	while(1){
-		if(*(s-len_t+i-1) != *(t+i)){
-			cout << *(s-len_t-1+i);
-			cout << *(t+i);
+
+		if( *(s-len_t+i) != *(t+i) ){
 			ans = 0;
 			break;
 		}
