@@ -83,8 +83,9 @@ char *reverse(char *original){
 	for(j=len-1,i=0;j>=0;j--,i++)
 		*(reverse+i) == (*original+j);
 
-	for (int k=0;k<strlen(reverse);k++)
-		cout << *(reverse+k);
+	*(reverse+i+1) = '\0';
+
+	cout << reverse;
 }
 
 void checkPalindrome(char *s){
