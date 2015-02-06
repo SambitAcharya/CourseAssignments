@@ -26,6 +26,9 @@ int strlen(char* str){
 }
 
 char *strcpy(char *dest, const char *src){
+
+   // Function to copy one string to another string.
+
    char *saved = dest;
    while (*src){
        *dest++ = *src++;
@@ -35,6 +38,9 @@ char *strcpy(char *dest, const char *src){
 }
 
 char *strcat(char *s, char *t){
+
+	// Function to concantenate a string at the end to another string.
+
 	int c,d;
 	c = strlen(s);
  	d = 0;
@@ -48,11 +54,32 @@ char *strcat(char *s, char *t){
    s[c] = '\0';
 }
 
+int strend(char *s, char *t){
+
+	int len_s = strlen(s);
+	int len_t = strlen(t);
+
+	if (len_t>len_s)
+		return 0;
+
+	int i = 0,ans=1;
+	while(1){
+		if(*(s-len_t+i-1) != *(t+i)){
+			cout << *(s-len_t-1+i);
+			cout << *(t+i);
+			ans = 0;
+			break;
+		}
+		i++;
+	}
+	return ans;
+}
+
 int main() {
 
 	char s[] = "My name is Sambit";
 	char s2[100];
-	char s3[] = " Acharya";
+	char s3[] = "Acharya";
 	int length;
 
 	length = strlen(s);
@@ -61,8 +88,9 @@ int main() {
 
 	strcat(s,s3);
 
-	for (int i = 0; i<strlen(s);i++)
-		cout << *(s+i);
+	cout << strend(s,s3) << endl;
+	// for (int i = 0; i<strlen(s);i++)
+	// 	cout << *(s+i);
 
 	return 0;
 }
