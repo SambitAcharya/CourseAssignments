@@ -25,32 +25,29 @@ int strlen(char* str){
 	return count;
 }
 
-void strcpy(char *src, char *dest){
-
-	// Function to copy one string to another.
-
-	while(*src!='\0'){
-		*dest=*src;
-		src++;
-		dest++;
-	}
-	*dest=*src;
+char *strcpy(char *dest, const char *src)
+{
+   char *saved = dest;
+   while (*src)
+   {
+       *dest++ = *src++;
+   }
+   *dest = 0;
+   return saved;
 }
 
 int main() {
 
-	char s[100];
+	char s[100] = "My name is sambit";
 	char s2[100];
 	int length;
 
-	cout << "Enter the string. \n";
-	for (int i=0; i<=100;i++)
-		cin >> s[i];
-
 	length = strlen(s);
-	strcpy(s,s2);
+	// cout << length << "\n";
+	strcpy(s2,s);
 
-	cout << s2;
+	for (int i=0; i<=strlen(s2); i++)
+		cout << *(s2+ i);
 
 	return 0;
 }
