@@ -74,11 +74,26 @@ int strend(char *s, char *t){
 	return ans;
 }
 
+void checkPalindrome(char *s){
+
+	int i,j,flag=1;
+	int len = strlen(s);
+ 	for(i=0,j=len-1;i<len/2;++i,--j){
+  		if(s[j]!=s[i])
+  		flag=0;
+  	}
+ 	 if (flag)
+ 	 	cout << "Given string is a palindrome." << endl;
+	 else
+	 	cout << "Given string is not a palindrome." << endl;
+	}
+
 int main() {
 
 	char s[] = "My name is Sambit";
 	char s2[100];
 	char s3[] = "Acharya";
+	char s4[] = "maDaam";
 	int length;
 
 	length = strlen(s);
@@ -87,9 +102,9 @@ int main() {
 
 	strcat(s,s3);
 
-	cout << strend(s,s3) << endl;
-	// for (int i = 0; i<strlen(s);i++)
-	// 	cout << *(s+i);
+	// cout << strend(s,s3) << endl;
+
+	checkPalindrome(s4);
 
 	return 0;
 }
