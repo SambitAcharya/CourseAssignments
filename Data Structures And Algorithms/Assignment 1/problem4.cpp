@@ -22,9 +22,24 @@ Notice that space character has occured once in the input above (look at the out
 */
 
 #include <iostream>
+#include <string>
 using namespace std;
 
+class CharacterCount{
+
+	public:
+		char name;
+		int count;
+};
+
 int main() {
-	// your code goes here
+
+	string sentence;
+	getline(cin,sentence);
+
+	int length = sentence.size();
+	for(string::iterator i=sentence.begin(); i!=sentence.end();i++){
+		cout << *i << endl;
+	}
 	return 0;
 }
