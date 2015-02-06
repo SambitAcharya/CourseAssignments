@@ -25,29 +25,44 @@ int strlen(char* str){
 	return count;
 }
 
-char *strcpy(char *dest, const char *src)
-{
+char *strcpy(char *dest, const char *src){
    char *saved = dest;
-   while (*src)
-   {
+   while (*src){
        *dest++ = *src++;
    }
    *dest = 0;
    return saved;
 }
 
+char *strcat(char *s, char *t){
+	int c,d;
+	c = strlen(s);
+ 	d = 0;
+
+   while (t[d] != '\0') {
+      *(s+c) = *(t+d);
+      d++;
+      c++;
+   }
+
+   s[c] = '\0';
+}
+
 int main() {
 
-	char s[100] = "My name is sambit";
+	char s[] = "My name is Sambit";
 	char s2[100];
+	char s3[] = " Acharya";
 	int length;
 
 	length = strlen(s);
-	// cout << length << "\n";
+	// cout << length << endl;
 	strcpy(s2,s);
 
-	for (int i=0; i<=strlen(s2); i++)
-		cout << *(s2+ i);
+	strcat(s,s3);
+
+	for (int i = 0; i<strlen(s);i++)
+		cout << *(s+i);
 
 	return 0;
 }
