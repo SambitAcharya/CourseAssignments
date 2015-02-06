@@ -16,6 +16,8 @@ using namespace std;
 
 int strlen(char* str){
 
+	// Function to find the length of the string.
+
 	int count = 0;
 	while(*(str+count)!='\0')
 		count++;
@@ -23,9 +25,17 @@ int strlen(char* str){
 	return count;
 }
 
+void strcpy(char *src, char *dest){
+
+	// Function to copy one string to another.
+
+	for (int i=0; i< strlen(src); i++)
+		cout << src[i];
+}
+
 int main() {
 
-	char s[100];
+	char s[100],s2[100];
 	int length;
 
 	cout << "Enter the string. \n";
@@ -33,7 +43,9 @@ int main() {
 		cin >> s[i];
 
 	length = strlen(s);
-	cout << length;
+	strcpy(s,s2);
+
+	cout << s2;
 
 	return 0;
 }
