@@ -14,7 +14,26 @@ f. Reverse a given string (char *reverse(char *original))
 #include <iostream>
 using namespace std;
 
+int strlen(char* str){
+
+	int count = 0;
+	while(*(str+count)!='\0')
+		count++;
+
+	return count;
+}
+
 int main() {
-	// your code goes here
+
+	char s[100];
+	int length;
+
+	cout << "Enter the string. \n";
+	for (int i=0; i<=100;i++)
+		cin >> s[i];
+
+	length = strlen(s);
+	cout << length;
+
 	return 0;
 }
