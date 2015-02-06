@@ -10,6 +10,18 @@ Return the array using a pointer. The function would be:  int *zero_array(int *a
 using namespace std;
 
 int main() {
-	// your code goes here
+	int n;
+
+	cout << "Enter the length of the array. \n";
+	cin >> n;
+
+	int *a = new int[n];
+
+	cout << "Enter the elements of the array. \n";
+	for(int i=0;i<n;i++){
+		cin >>  a[i];
+		cout << a[i];
+		cout << "\n";
+	}
 	return 0;
 }
