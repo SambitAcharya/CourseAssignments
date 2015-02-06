@@ -74,6 +74,19 @@ int strend(char *s, char *t){
 	return ans;
 }
 
+char *reverse(char *original){
+
+	int len = strlen(original);
+	int i,j;
+	char *reverse = new char[len];
+
+	for(j=len-1,i=0;j>=0;j--,i++)
+		*(reverse+i) == (*original+j);
+
+	for (int k=0;k<strlen(reverse);k++)
+		cout << *(reverse+k);
+}
+
 void checkPalindrome(char *s){
 
 	int i,j,flag=1;
@@ -94,6 +107,7 @@ int main() {
 	char s2[100];
 	char s3[] = "Acharya";
 	char s4[] = "maDaam";
+	char s5[] = "reverse";
 	int length;
 
 	length = strlen(s);
@@ -104,7 +118,11 @@ int main() {
 
 	// cout << strend(s,s3) << endl;
 
-	checkPalindrome(s4);
+	// checkPalindrome(s4);
 
+	reverse(s5);
+
+	// for (int i=0;i<strlen(s5);i++)
+	// 	cout << *(s5+i);
 	return 0;
 }
